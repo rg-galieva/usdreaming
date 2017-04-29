@@ -1,0 +1,60 @@
+@import "../../assets/styles/vars.gcss";
+
+:global(html) {
+  @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic');
+}
+
+:global(body) {
+  background-color: var(--c_bg);
+}
+
+.wrap {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 calc(100% / var(--f_size));
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  font-family: 'PT Sans', sans-serif;
+
+  & > main {
+    padding-top: calc(100rem / var(--f_size));
+    flex: 1 0 auto;
+  }
+}
+
+.cont {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  & > :global(section) {
+    position: relative;
+    flex: 1;
+    max-width: 100%;
+  }
+}
+
+.footer {
+  flex: 0 0 auto;
+  z-index: calc(var(--z-layout) - 1);
+  font-size: calc(12rem/var(--f_size));
+  line-height: calc(60rem/var(--f_size));
+
+  & a {
+    margin-right: 20px;
+    color: var(--c_link);
+    text-decoration: none;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (--w_phone_only) {
+  .footer {
+    display: none;
+  }
+}
