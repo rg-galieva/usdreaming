@@ -15,12 +15,11 @@ class IndexPage extends Component {
 
         for (let key in post_data) {
             post_data[key].id = key;
-            console.log("---post_data", post_data[key]);
             post_list.push(<Post key={key} post={post_data[key]}/>)
         }
 
         return post_list
-    }
+    };
 
     render() {
         return (
@@ -29,7 +28,6 @@ class IndexPage extends Component {
             </div>
         );
     }
-
 }
 
 IndexPage.propTypes = {

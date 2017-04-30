@@ -10,18 +10,16 @@ const normalizePosts = (arr) => {
         posts[id] = el;
     }
 
-    console.log("---normalizedPosts", posts);
     return posts
-}
+};
 
 export default (state = {}, action) => {
     switch (action.type) {
         case FETCH_POSTS:
-            console.log("---", action.payload.data);
-            return normalizePosts(action.payload.data)
+            console.log("---FETCH_POSTS", action.payload.data);
+            return normalizePosts(action.payload.data);
 
         default:
             return state;
     }
-
 }

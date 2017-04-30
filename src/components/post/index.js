@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import s from './_styles.pcss'
 
 const Post = (props) => {
@@ -9,13 +9,13 @@ const Post = (props) => {
     return (
         <article className={[s.content, s.post].join(" ")}>
             <div className={s.post_image}>
-                <NavLink to={`/post/${id}`}>
+                <Link to={`/post/${id}`}>
                     <div className={s.post_image_bg}></div>
-                </NavLink>
+                </Link>
             </div>
 
             <div className={s.post_info}>
-                <NavLink to={`/post/${id}`}><h4>{title}</h4></NavLink>
+                <Link to={`/post/${id}`}><h4>{title}</h4></Link>
                 <time dateTime={createDate} className="is-emph">{createDate} | by {author}</time>
 
                 <div className={[s.desc, "clearfix"].join(" ")}>
@@ -23,7 +23,7 @@ const Post = (props) => {
                          {/*style={{float: "left", marginRight: "1rem"}}/>*/}
                     <p>{summary}</p>
 
-                    <NavLink to={`/post/${id}`} className={s.link_full_post}>continue reading...</NavLink>
+                    <Link to={`/post/${id}`} className={s.link_full_post}>continue reading...</Link>
                 </div>
             </div>
         </article>

@@ -9,6 +9,9 @@ THIS DOCUMENT IS IN PROGRESS. THIS PARAGRAPH SHALL BE REMOVED WHEN THIS DOCUMENT
 - surge deploy
 - yarn
 
+### ToDo
+- Serverless
+- Image Upload
 
 ### Getting started
 ```
