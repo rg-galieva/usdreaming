@@ -28,16 +28,16 @@ $ yarn deploy
 // make production build and deploy to the surge.sh
 ```
 
-###Before deployment
+### Before deployment
 Edit CNAME file: write subdomain name for surge.sh service, for example 
 ```
 surge-static.surge.sh
 ```
 
-###Syntax
+### Syntax
 ES-2015 (without modules, because webpack2 supports them by default), features >= stage2 (for example, arrow func in react components)
 
-###Styles
+### Styles
 [.css] - local styles
 [.gcss] - global styles. Have special rule in webpack config. No need to use :global identifier in gcss files.
 

@@ -23,57 +23,19 @@
 }
 
 .logo {
-  @import url('https://fonts.googleapis.com/css?family=Voltaire');
-  position: relative;
   float: left;
   margin-right: 2rem;
-  width: calc(54rem / var(--f_size));
-  height: calc(54rem / var(--f_size));
-  padding: calc(7rem / var(--f_size)) 0 0 calc(8rem / var(--f_size));
-  font-family: 'Voltaire', sans-serif;
-  text-transform: uppercase;
-  color: var(--c_txt);
-  font-size: calc(26rem / var(--f_size));
   text-decoration: none;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background: var(--c_txt);
-  }
-
-  &::before {
-    height: 2px;
-    width: calc(54rem / var(--f_size));
-    transition: width .3s, background-color .13s linear .25s;
-  }
-
-  &::after {
-    width: 2px;
-    height: calc(54rem / var(--f_size));
-    transition: all .2s;
-    transition-delay: .25s;
+  & svg {
+    fill: var(--c_txt);
+    height: calc(26rem / var(--f_size));
+    transition: all .2s ease-out;
   }
 
   &:hover {
-    &::before {
-      background: var(--c_emph);
-      width: calc(34rem / var(--f_size));
+    & svg {
+      fill: var(--c_emph);
     }
-
-    &::after {
-      background: var(--c_emph);
-    }
-  }
-
-  & mark {
-    display: block;
-    font-size: calc(18rem / var(--f_size));
-    background: none;
-    color: var(--c_txt);
-    white-space: nowrap;
   }
 }

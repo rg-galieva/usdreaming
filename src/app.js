@@ -2,23 +2,21 @@ import React from 'react';
 import {render} from 'react-dom';
 import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
-import {ConnectedRouter, routerMiddleware} from 'react-router-redux'
+import promise from 'redux-promise'
+// import {ConnectedRouter, routerMiddleware} from 'react-router-redux'
 
 import reducers from './reducers';
 import history from './history'
 import routes from './routes'
 
-const middleware = routerMiddleware(history);
-const store = createStore(reducers, applyMiddleware(middleware));
-
-// import * as OfflinePluginRuntime from 'offline-plugin/runtime';
-// OfflinePluginRuntime.install();
+// const middleware = routerMiddleware(history);
+const store = createStore(reducers, applyMiddleware(promise));
 
 render(
     <Provider store={store}>
-        <ConnectedRouter history={history}>
+        {/*<ConnectedRouter history={history}>*/}
             {routes}
-        </ConnectedRouter>
+        {/*</ConnectedRouter>*/}
     </Provider>,
     document.getElementById('app')
 );

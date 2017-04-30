@@ -1,0 +1,74 @@
+@import "../../assets/styles/vars.gcss";
+
+.post_image {
+  position: relative;
+  width: 100%;
+  height: calc(300rem/var(--f_size));
+  background-size:cover;
+  box-shadow:inset 0 0 0 2000px color(#3e6edf alpha(20%));
+}
+
+.post_info {
+  margin: 1rem 5rem;
+
+  & > a {
+    color: var(--c_txt);
+    text-decoration: none;
+  }
+
+  & > a:hover {
+    color: var(--c_link);
+  }
+
+  & > h4 {
+    font-weight: var(--f_bold);
+  }
+}
+
+@media (max-width: 1000px) {
+  .post_info {
+    width: 75%;
+  }
+}
+
+@media (max-width: 900px) {
+  .post_info {
+    width: 95%;
+  }
+}
+
+.likes {
+  position: absolute;
+  top: 10px; right: 10px;
+}
+
+.desc {
+  margin: calc(20rem/var(--f_size)) 0 calc(40rem/var(--f_size));
+}
+
+.link_full_post {
+  font-weight: var(--f_bold);
+}
+
+.icon {
+  display: inline-block;
+  padding: 0 10px;
+  text-align: center;
+  color: var(--c_sub);
+  font-size: 12px;
+
+  & svg {
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    fill: var(--c_txt);
+    transition: all 0.2s ease-in;
+  }
+
+  &:hover {
+    cursor: pointer;
+    & svg {
+      fill: var(--c_sub);
+    }
+  }
+}
