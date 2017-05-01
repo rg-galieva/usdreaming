@@ -28,4 +28,5 @@
   --z-layout: 100;
   --z-cont: 10;
   --z-bg: 5;
+  --z-alert: 200;
 }

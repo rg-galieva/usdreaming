@@ -6,11 +6,16 @@ import Post from '../../components/post'
 
 class IndexPage extends Component {
     componentDidMount() {
-        this.props.fetch_posts()
+        this.props.fetch_posts();
     }
 
     getPosts = () => {
         const post_data = this.props.posts;
+
+        if (!post_data) {
+            return <div>...Loading</div>
+        }
+
         const post_list = [];
 
         for (let key in post_data) {

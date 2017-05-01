@@ -2,7 +2,6 @@ const {resolve} = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const OfflinePlugin = require('offline-plugin');
 const cssSettings = require('./../../src/assets/styles/vars.js');
 
 module.exports = function () {
@@ -10,7 +9,6 @@ module.exports = function () {
         context: resolve(__dirname, './../../src'),
 
         entry: {
-            vendor: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom', 'react-router-redux'],
             app: './app.js'
         },
 
@@ -120,16 +118,13 @@ module.exports = function () {
                 title: 'US Dreaming',
                 template: __dirname + '/template.html'
             }),
-            // new OfflinePlugin({
-            //     ServiceWorker: {
-            //         navigateFallbackURL: '/'
-            //     },
-            //     AppCache: {
-            //         FALLBACK: {
-            //             '/': '/offline.html'
-            //         }
-            //     }
-            // })
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor',
+
+                minChunks: ({ resource }) => (
+                    resource && resource.indexOf('node_modules') >= 0 && resource.match(/\.js$/)
+                ),
+            })
         ]
     }
 }
