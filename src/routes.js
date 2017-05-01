@@ -1,5 +1,4 @@
 import React from 'react'
-import history from './history'
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 import Layout from './pages/layout'
 import IndexPage from './pages/index-page'

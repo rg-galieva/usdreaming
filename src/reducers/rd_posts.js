@@ -1,4 +1,4 @@
-import {FETCH_POSTS} from '../constants'
+import {FETCH_POSTS, GET_POST, DELETE_POST} from '../constants'
 
 const normalizePosts = (arr) => {
     const posts = {};
@@ -16,8 +16,15 @@ const normalizePosts = (arr) => {
 export default (state = {}, action) => {
     switch (action.type) {
         case FETCH_POSTS:
-            console.log("---FETCH_POSTS", action.payload.data);
             return normalizePosts(action.payload.data);
+
+        case GET_POST:
+            return {...state, [action.payload.data._id]: action.payload.data};
+
+        case DELETE_POST:
+            const updatedState = state;
+            delete updatedState[action.payload];
+            return updatedState;
 
         default:
             return state;
